@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <form class ="form" style="display: inline-flex;">
+        <label for="weight">Weight (in KGs)</label>
+        <input type="number" name="weight" id="weight" value="0">
+        <label for="height">Height (in Meters)</label>
+        <input type="number" name="height" id="height" value="1">
+        <br>
+        <button type="submit" style="border: 2px solid lightblue; border-radius: 4px; background-color:lightskyblue;">calculate</button>
+        <br>
+    </form>
+    <div id="out" style=" margin-top:50px; border: 2px solid black">Output</div>
+    
+</body>
+<script>
+    // function bmi() {
+    //     const w_val=document.getElementById("weight").value;
+    //     const h_val=document.getElementById("height").value;
+    //     const val=w_val/Math.pow(h_val,2)
+    //     console.log(val);
+    //     document.querySelector("#out").innerHTML=val.toFixed(2)
+    // }
+    //by eventlistener
+    const form=document.querySelector(".form");
+    form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const weight=parseInt(document.querySelector("#weight").value);
+        const height=parseInt(document.querySelector("#height").value);
+        if(weight<=0 || height<=0 || isNaN(weight) || isNaN(height)){
+            document.querySelector('#out').textContent="Please Give Valid input";
+        }else{
+            document.querySelector("#out").textContent=(weight/Math.pow(height,2)).toFixed(2);
+        }
+    })
+
+</script>
+</html>

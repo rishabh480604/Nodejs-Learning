@@ -1,0 +1,65 @@
+<!-- 
+    //the file focus on query selection and its manipulation
+    console.log(windows)
+    console.dir(windows.document)
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Dom Learning</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 id="title" class="heading">Lorem Heading <span style="display: none">Test text</span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et exercitationem natus inventore tenetur! Iusto quidem, laborum laboriosam totam cum inventore debitis, ducimus quod minima facere sint consectetur reiciendis harum sapiente quisquam consequatur. Impedit, rem et?</p>
+        
+    </div>
+    <div class="bg-grey">
+    <h2 id="titles" class="heading-2">Lorem Heading-2 <span style="display: none">Test text</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et exercitationem natus inventore tenetur! Iusto quidem, laborum laboriosam totam cum inventore debitis, ducimus quod minima facere sint consectetur reiciendis harum sapiente quisquam consequatur. Impedit, rem et?</p>
+        
+
+    </div>
+    <input type="text" name="pass" value="0">
+    <ul>
+        <li class="listItem">One</li>
+        <li class="listItem">Two</li>
+        <li class="listItem">Three</li>
+        <li class="listItem">Four</li>
+    </ul>
+    
+</body>
+</html>
+
+<!-- 
+    //to select id class or else
+    document.getElementById()
+
+    to modigy in it
+    document.getElementById("id").style.attribute_name=value;
+    ex
+    document.getElementById("title").style.color='red";
+    
+    //after selecting element and store in data
+    data.innerText- shows data is displayed
+    data.textContent-show all that may be hide by CSS
+    data.innerHTML-show with tags
+
+    //to select and then change properties
+    document.querySelector("tag_name")-return first that tag
+    in querselector
+    .class_name for class
+    #id for id
+    tag_name[attribute_name] for attribute
+
+    queryselectorAll return node list
+    nodelist is not array
+
+    if any other collection convert in into array by Array.from(const_variable_name)
+    or by decoupling [...variable_name]
+
+    //to assignval in tag use innerText
+                        in innerHTML -u must hae to give data in tags
+ -->

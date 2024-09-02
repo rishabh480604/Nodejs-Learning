@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess NO</title>
+</head>
+<body style="background-color: grey;">
+<p style="text-align: center; background-color: black; color: white; size: 20px;">Number Guessing Game</p>
+<p style=" color: white; text-align: center;">Try and guess a random
+    no between 1 to 100 </p>
+    <br>
+    <input type="text"  id="data" style=" display: flex; justify-content: center; align-items: center; border-radius: 5px; border-style: ridge; align-self:center;" value="0">
+    <div id="button" style="margin-top:50px; height: 50px; width: 200px; background-color: blue; border-radius: 10px; border-color: black; border-width: 5px; color: white; text-align: center; align-items: center;">Submit Guess</div>
+    <div  style="margin-top: 10px;">Previous guess: <span id="prev"></span></div>
+    <div class="guess"> Guess Left: <span id="left"></span></div>
+</body>
+<script>
+    let val=Math.round(Math.random()*100)+1;
+    function start(){
+        document.querySelector("#left").textContent=10;
+
+    }
+    start();
+    const buttons=document.querySelector("#button");
+    buttons.addEventListener('click',(e)=>{
+        const data=document.querySelector("#data").value;
+        if(parseInt(data)===parseInt(val)){
+            alert("You won");
+        }else{
+            document.getElementById("prev").innerText+=`${data} ,`;
+            let count=parseInt(document.getElementById("left").innerText);
+            // console.log(count+" "+data+" "+val);
+            if(count===1){
+                alert("you Lost");
+            }else{
+                document.getElementById("left").innerText=parseInt(count)-1;
+            }
+        }
+    })
+
+
+</script>
+</html>

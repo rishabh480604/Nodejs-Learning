@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <h1 id="clock">hi</h1>
+</head>
+<body>
+    
+</body>
+<script>
+    const clock=document.getElementById("clock");
+    let date=new Date();
+    console.log(date.toLocaleString());
+    //to run function over time period
+    // fist para function to execute ,second time in millisec to repeat
+    setInterval(function(){
+        let date=new Date();
+        console.log(date.toLocaleString());
+        clock.innerHTML=date.toLocaleTimeString();
+    },1000);
+</script>
+</html>

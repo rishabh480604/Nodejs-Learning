@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom | Nodes relations</title>
+</head>
+<body style="background-color: black; color: white">
+    <div class="parent">
+        <!-- this is comment video 33 time 16 for childnodes of parent -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wedday</div>
+        <div class="day">Thursday</div>
+    </div>
+    
+</body>
+<script>
+    // select parent elemnt and find value
+    const parent=document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children)
+    //children to get all children
+    //parentElement to get parent
+    for(let i=0;i<parent.children.length;i++){
+        // console.log(parent.children[i].innerHTML)
+    }
+    //to firstElementChild
+    // console.log(parent.firstElementChild());
+    // console.log(parent.lastElementChild());
+    const dayOne=document.querySelector('.day');
+    // console.log(dayOne.parentElement);//to get parent element
+    // console.log(dayOne); //moday
+    // console.log(dayOne.nextElementSibling);//to move mondayto tuesday
+    console.log("Node :", parent.childNodes);
+
+    </script>
+</html>

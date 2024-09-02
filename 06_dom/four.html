@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Edit and Remove Element</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLang(langName){
+        const elem=document.createElement('li');
+        elem.innerText=`${langName}`;
+        document.querySelector('.language').appendChild(elem);
+    }
+    //not optimise
+    // addLang("Java")
+    // addLang("Python")
+    // addLang("HTML")
+    // when required to thousand data to add each time it will traverse the tree
+    //use below for future use createTextNode
+    function addopt(langName){
+        const elem=document.createElement('li');
+        elem.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(elem);
+    }
+    const node=document.querySelector('.language');
+    addopt("Java")
+    addopt("Python")
+    addopt("HTML")
+    //Edit
+    const seclang=document.querySelector('li:nth-child(2)');
+    seclang.innerHTML='Mojo';//but not optimised
+    //not optimised to optimise
+    // const newli=document.createElement('li')
+    // newli.textContent="Mojo"
+    // seclang.replaceWith(newli)//formatting will be removed
+
+    //self res instead of innerHTML use textContent
+
+    //Edit
+    const firstLang=document.querySelector("li:first-child");
+    firstLang.outerHTML='<li>TypeScript</li>';
+    
+</script>
+</html>
