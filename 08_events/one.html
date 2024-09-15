@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: grey;">
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <li><img width="200px" id="1" src="https://s3.amazonaws.com/images.seroundtable.com/google-amp-1454071566.jpg" alt="img-1"></li>
+        <li><img width="200px" id="2" src="https://media.istockphoto.com/id/1960673527/photo/fashion-designers.jpg?s=1024x1024&w=is&k=20&c=n1wnhIy5u2-6XSpKkcGrz3j9_NYRzniGWQMYxYWb3Fk=" alt="img-2"></li>
+        <li><img width="200px" id="3" src="https://media.istockphoto.com/id/2155956629/photo/banner-top-view-office-desk-laptop-and-coffee-cup-on-wood-table-copy-space-panorama-tabletop.jpg?s=2048x2048&w=is&k=20&c=tLGcFWv8DUTAgQC-LMvSoohnrUisfkih7r420AXGOgM=" alt="img-3"></li>
+        <li><img width="200px" id="4" src="https://cdn.pixabay.com/photo/2024/05/27/12/27/gargoyle-8791108_1280.jpg" alt="img-4"></li>
+        <li><img width="200px" id="5" src="https://media.istockphoto.com/id/1899892340/vector/world-map-highly-detailed-vector-map-of-the-world.jpg?s=2048x2048&w=is&k=20&c=Yg9f6OoW3nEafzoVpcYDczFmttVmvpl3jN78pB6g8ug=" alt="img-5"></li>
+        <li><img width="200px" id="6" src="https://media.istockphoto.com/id/1388281600/vector/black-silhouette-of-climber-with-ice-axe-in-hand-on-white-background.jpg?s=2048x2048&w=is&k=20&c=_7pQms19oFjjf9c8fbXJF7kpPH5NWwVN-MMfgAdRMBE=" alt="img-6"></li>
+        <li><img width="200px" id="7" src="https://cdn.pixabay.com/photo/2024/01/06/14/32/ai-generated-8491464_1280.jpg" alt="img-7"></li>
+        <a  id="google" href="https://google.co.in">Google</a>
+    </ul>
+    
+</body>
+<script>
+    //attachEvent() in IE
+    //jquery - on
+
+    //type , timestamp,defaultPrevented
+    //target , toElement, srcElement, currentTarget,
+    //clientX, clientY, screenX, screenY
+    //altKey, ctrlKey, shiftKey, keyCode
+
+     
+    // document.getElementById("1").onclick=function(){
+    //     alert("owl clicked")
+    // }
+    //event handler give propagation feature than above one
+    //thre parameters
+    document.getElementById("images").addEventListener('click',function(e){
+        alert("clicked inside the ul");
+        
+    },false)
+    document.getElementById("2").addEventListener('click',function(e){
+        alert("clicked insided the image 2 ");
+        //to stop propagation further
+        // e.stopPropagation();
+        
+    },false)
+
+    //when third parameter false-bubbling mean tags start from inner to outer
+    //when true-tag start from outer to inner
+    document.getElementById("google").addEventListener('click',(e)=>{
+        e.preventDefault();
+        // e.stopPropagation();
+        console.log("google click")
+    })
+    
+    document.querySelector('#images').addEventListener('click',(e)=>{
+        console.log(e.target.parentNode);
+        // e.target.parentNode.style.display='None';
+        if(e.target.tagName=='IMG'){
+            console.log(e.target.id);
+            let removeIt=e.target.parentNode;
+            removeIt.remove();
+        }
+        // let removeIt=e.target.parentNode;
+        
+
+        
+        
+    },true)
+    
+    
+    
+</script>
+</html>

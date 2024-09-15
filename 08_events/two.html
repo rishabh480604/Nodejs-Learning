@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Ur Code</h1>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    //setTimeInterval and setTimeout is in not art of js directly
+   //execute when timeout execute once
+   const sayRiz=function(){
+    console.log('Rishabh');
+    document.querySelector('h1').innerHTML="hi"
+   }
+    const changeMe=setTimeout(sayRiz,5000);
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        //clear timeout allow to remove settimeout
+        clearTimeout(changeMe)
+        console.log("StOpPoEd");
+    })
+
+</script>
+</html>

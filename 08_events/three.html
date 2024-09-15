@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Ur Code</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    intervalid=0;
+    const runevent=()=>{
+        clearevent(intervalid)
+        intervalid=setInterval(() => {
+            console.log(`hello  ${Date.now()}`);
+        }, 1000);
+    }
+    //setinterval return int
+    const clearevent=()=>{
+        clearInterval(intervalid);
+        console.log(`Event ${intervalid} stopped`);
+    }
+    
+    // const intervalid=setInterval(() => {
+    //     console.log("dada",Date.now());
+    // }, 1000);//last parameter as function parameter
+    // const fun=()=>{console.log("working");};
+    
+    // clearInterval(intervalid)
+    document.querySelector('#start').addEventListener('click',runevent);
+    document.querySelector('#stop').addEventListener('click',clearevent);
+
+
+    
+</script>
+</html>
